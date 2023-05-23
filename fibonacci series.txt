@@ -1,0 +1,32 @@
+--To print fibonacci series
+
+--PL/SQL Block:
+declare
+	i int;
+	a int:=0;
+	b int:=1;
+	c int;
+	n int;
+begin
+	n:=&n;
+	dbms_output.put_line('Fibonacci series');
+	dbms_output.put(a||' '||b);
+	for i in 2..n
+	loop 
+		c:=a+b;
+		dbms_output.put(' '||c);
+		a:=b;
+		b:=c;
+	end loop;
+	dbms_output.put_line('');
+end;
+/
+
+--output:
+Enter value for n: 10
+old   8:        n:=&n;
+new   8:        n:=10;
+Fibonacci series
+0 1 1 2 3 5 8 13 21 34 55
+
+PL/SQL procedure successfully completed.
